@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Usuarios do Sistema</title>
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            <rich:dataTable
+                rows="10"
+                var="item"
+                value="#{usuariosControlle.todos}">
+
+                <f:facet name="header">
+                    <h:outputText value="Todos Usuários"/>
+                </f:facet>
+
+                <rich:column>
+                    <f:facet name="header">
+                        <h:outputText value="ID do Usuario" />
+                    </f:facet>
+
+                    <h:commandLink
+                        action="#{usuariosControlle.editar()}"
+                        value="#{item.id_usuario}"
+                        title="Clique aqui para atualizar"/>
+                </rich:column>
+                <br>
+
+                </br>
+
+                <rich:column>
+                    <f:facet name="header">
+                        <h:outputText value="Descrição do Usuário" />
+                    </f:facet>
+                    <h:outputText value="#{item.login_uruario}"/>
+                </rich:column>
+
+                <br>
+                </br>
+        <rich:column>
+                    <f:facet name="header">
+                        <h:outputText value="Senha:" />
+                    </f:facet>
+                    <h:outputText value="#{item.senha_usuario}"/>
+                </rich:column>
+
+                <br></br>
+       
+                <rich:column>
+                    <f:facet name="header">
+                        <h:outputText value="Excluir" />
+                    </f:facet>
+                    <h:commandLink action="#{usuariosControlle.excluir()}"
+                                   value="Excluir"
+                                   onclick="return confirm('Deseja excluir? Esta ação não poderá ser defeita!! ');"/>
+                </rich:column>
+
+                <f:facet name="footer">
+                    <rich:dataScroller id="scroller"/>
+                </f:facet>
+            
+                <h:commandLink
+                action="#{usuariosControlle.novaUsuarios}"
+                value="Novo Cadastro"/>
+        </rich:dataTable>
+        </h:form>
+
+    </h:body>
+</html>

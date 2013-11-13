@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Usuarios</title>
+    </h:head>
+    <h:body>
+        
+        
+        <h:form id="form1">
+            <rich:panel header="Cadastrar Usuario">
+                <h2><u>Cadastro de Usuario</u></h2>
+                
+                             
+                <u><h:outputText value="Descrição do Usuario" /> </u>            
+                <h:inputText size="20" id="numero" value="#{usuariosControlle.objUsuarios.login_uruario}"
+                             required="true"
+                             requiredMessage="O Campo é obrigatório!!!"/>
+                <h:message for="nome do Usuario"/>
+               
+                
+                <br>  
+                </br>
+                
+                <u><h:outputText value="Senha do Usuario" /> </u>             
+                <h:inputText size="5" id="operadora" value="#{usuariosControlle.objUsuarios.senha_usuario}"
+                             required="true"
+                             requiredMessage="Campo obrigatÃ³rio!!!"/>
+                <h:message for="Senha do Usuario"/>
+                
+                         
+                
+                
+                <br/>
+                <h:commandButton value="Salvar"  action="#{usuariosControlle.salvar()}"/>
+                <h:commandButton value="Limpar"  action="#{usuariosControlle.limpar()}" immediate="true"/> 
+                <h:commandLink value="Cancelar" action="/mostrarUsuarios" immediate="true" />
+            </rich:panel>
+        </h:form>
+
+        
+        
+    </h:body>
+</html>
+

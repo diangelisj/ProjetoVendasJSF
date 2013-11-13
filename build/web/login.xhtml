@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core">
+     
+    <h:head>
+        <title>Controle de Vendas</title>
+    </h:head>
+      <h:body>
+       
+        
+        <h1><h:outputText value="vendas"/></h1>
+            <h:form>
+            <rich:panel header="Acesso ao Sistema!" style="width: 150px;">
+                Login:<h:inputText id="login" value="#{loginController.usuario.login_uruario}"/>
+                <br/>
+                Senha:<h:inputSecret id="senha" value="#{loginController.usuario.senha_usuario}"/>
+                <br/>
+                <h:commandButton id="btn" value="Logar" 
+                                 action="#{loginController.acaoLogar()}"/>
+                <br/>
+                <h:commandLink value="Cadastrar-se" action="#{usuariosControlle.novaUsuarios()}"  />
+
+            </rich:panel>
+        </h:form>
+        </h:body>
+</html>
+
